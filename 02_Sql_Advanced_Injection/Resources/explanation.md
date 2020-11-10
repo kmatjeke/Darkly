@@ -96,3 +96,7 @@ Decode the hash 1928e8083cf461a51303633093573c4 using md5.gromweb.com website.
 Which gives us the original string "Albatroz"
 lower all characters and as per the instructions Sh-256 of albatroz is: f2a29020ef3132e01dd61df97fd33ec8d7fcd1388cc9601e7db691d17d4d6188 which is the flag
 
+## Prevention
+
+>Everything has to be done through so-called prepared SQL queries, the ORMs do a good job of protecting info. (cf: PDO :: prepare)  
+>Try sending forms as post requests

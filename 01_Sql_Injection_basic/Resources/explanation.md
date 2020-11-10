@@ -140,3 +140,8 @@ Decode the hash 5ff9d0165b4f92b14994e5c685cdce28 using the md5.gromweb.com websi
 Which gives us the original string "FortyTwo"  
 lower all characters and as per the instructions Sh-256 of fortytwo is: 10a16d834f9b1e4068b25c4c46fe0284e99e44dceaf08098fc83925ba6310ff5  
 We now have the flag (10a16d834f9b1e4068b25c4c46fe0284e99e44dceaf08098fc83925ba6310ff5)
+
+## Prevention
+
+>Everything has to be done through so-called prepared SQL queries, the ORMs do a good job of protecting info. (cf: PDO :: prepare)  
+>Try sending forms as post requests
