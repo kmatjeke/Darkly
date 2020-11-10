@@ -4,7 +4,7 @@ The GET parameter in the image search form is vulnerable to sql injection
 
 ## Method
 
-Go to the search image page (<http://192.168.1.102/?page=searching>)  
+Go to the search image page (<http://192.168.1.102/?page=searchimg>)  
 In the search field search '1 and 1 = 1' (which shows you that the form is vulnerable)
 
 ## Manipulation
