@@ -136,9 +136,10 @@ We then follow this instruction to get the flag we need.
 
 ## How to get the flag
 
-Decode the hash 5ff9d0165b4f92b14994e5c685cdce28 using the md5.gromweb.com website.  
+Decode the hash 5ff9d0165b4f92b14994e5c685cdce28 using the md5.gromweb.com website.   
 Which gives us the original string "FortyTwo"  
-lower all characters and as per the instructions Sh-256 of fortytwo is: 10a16d834f9b1e4068b25c4c46fe0284e99e44dceaf08098fc83925ba6310ff5  
+lower all characters and as per the instructions Sh-256 of fortytwo is:  
+10a16d834f9b1e4068b25c4c46fe0284e99e44dceaf08098fc83925ba6310ff5  
 We now have the flag (10a16d834f9b1e4068b25c4c46fe0284e99e44dceaf08098fc83925ba6310ff5)
 
 ## Prevention
