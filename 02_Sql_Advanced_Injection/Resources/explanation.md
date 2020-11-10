@@ -1,4 +1,4 @@
-# Sql_Injection_basic
+# Sql_Advanced_Injection
 
 The GET parameter in the image search form is vulnerable to sql injection
 
